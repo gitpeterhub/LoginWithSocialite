@@ -46,6 +46,9 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-4 pull-right">
+                <button class="btn btn-warning">Log out</button>
+            </div>
         </div>
     </div>
 

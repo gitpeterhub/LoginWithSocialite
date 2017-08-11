@@ -42,8 +42,9 @@
                         <h3 class="panel-title">Please Sign up!</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="POST" action="/register">
                             <fieldset>
+                                {{csrf_field()}}
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Name" name="name" type="text" autofocus>
                                 </div>
@@ -53,13 +54,17 @@
                                 <div class="form-group">
                                     <input class="form-control" placeholder="Password" name="password" type="password" value="">
                                 </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Confirm Password" name="password_confirmation" type="password" value="">
+                                </div>
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Remember Me
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Register</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Register</button>
+
                             </fieldset>
                         </form>
                     </div>
