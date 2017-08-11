@@ -40,6 +40,7 @@ Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
    $this->get('/dashboard', 'Auth\LoginController@showDashboard')->name('dashboard');
 
    $this->post('/logout', 'Auth\LoginController@logout')->name('logout');
+   $this->get('/logout', 'Auth\LoginController@logout')->name('logout');
    
 });
 // Registration Routes...
