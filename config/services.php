@@ -50,8 +50,8 @@ return [
 
     'google' => [
         'client_id'     => env('GOOGLE_ID'),
-        'client_secret' => env('GOOGLE_SECRET'),
-        'redirect'      => env('GOOGLE_REDIRECT','http://localhost:8000/gmailapi')
+        'client_secret' => env('GOOGLE_KEY'),
+        'redirect'      => env('GOOGLE_REDIRECT')
     ],
 
     'github' => [
