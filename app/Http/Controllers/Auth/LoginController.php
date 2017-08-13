@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
+use App\User;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -116,7 +118,7 @@ class LoginController extends Controller
             return $authUser;
         }else{
             return User::create([
-            'username' => $user->getName(),
+            //'username' => $user->getName(),
             'name' => $user->getName(),
             'email' => $user->getEmail(),
             'password' => bcrypt(str_random(64))

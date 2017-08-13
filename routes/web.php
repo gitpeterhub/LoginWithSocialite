@@ -34,12 +34,12 @@ Route::get ( '/callback/{service}', 'Auth\LoginController@handleProviderCallback
 //$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 //uses laravel's default login routes
 Route::post('login', 'Auth\LoginController@login');
- //Route::get('dashboard', 'Admin\DashboardController@index')->name('dashboard');
+//Route::get('dashboard', 'Admin\DashboardController@index')->name('dashboard');
 
 Route::group(['prefix' => '/admin',  'middleware' => 'auth'], function()
 {
-	Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
-   //$this->get('/dashboard', 'Auth\LoginController@showDashboard')->name('dashboard');
+	//Route::get('/dashboard', ['as' => 'admin.dashboard', 'uses' => 'Admin\DashboardController@index']);
+   $this->get('/dashboard', 'Admin\DashboardController@index')->name('dashboard');
 
    //uses laravel's default logout routes
    
