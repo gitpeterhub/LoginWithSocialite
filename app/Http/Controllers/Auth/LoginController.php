@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Socialite;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin/dashboard';
+
 
     /**
      * Create a new controller instance.
@@ -38,10 +40,10 @@ class LoginController extends Controller
     }
 
     //to authenticate using username instead email by default
-    public function username()
+    /*public function username()
     {
         return 'username';
-    }
+    }*/
     //for social login purposes
     /**
      * Redirect the user to the social media authentication page.

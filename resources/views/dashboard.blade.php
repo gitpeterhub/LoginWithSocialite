@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="col-md-4 pull-right">
-                <button class="btn btn-warning">Log out</button>
+                <a href="{{url('/admin/logout')}}" class="btn btn-warning">Log out</a>
             </div>
         </div>
     </div>

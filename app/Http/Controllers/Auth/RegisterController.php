@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -62,7 +62,9 @@ class RegisterController extends Controller
     
         // create the user
         $user = $this->create($request->all());
-        return redirect('/dashboard');
+        // Login and "remember" the given user...
+        Auth::login($user, true);
+        return redirect('/admin/dashboard');
 
        
     }

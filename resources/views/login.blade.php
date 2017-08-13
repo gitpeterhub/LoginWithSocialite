@@ -40,9 +40,18 @@
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Please Sign In</h3>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        <form role="form" method="post" action="{{url('login')}}"
                             <fieldset>
                                 {{csrf_field()}}
                                 <div class="form-group">
@@ -57,9 +66,9 @@
                                     </label>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
-                                <a href="index.html" class="btn btn-lg btn-primary btn-block">Login with Facebook</a>
-                                <a href="index.html" class="btn btn-lg btn-default btn-block">Login with Google</a>
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
+                                <a href="{{url('/redirect/facebook')}}" class="btn btn-lg btn-primary btn-block">Login with Facebook</a>
+                                <a href="{{url('/redirect/google')}}" class="btn btn-lg btn-default btn-block">Login with Google</a>
                             </fieldset>
                         </form>
                     </div>
